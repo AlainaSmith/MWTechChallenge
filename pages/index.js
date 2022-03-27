@@ -1,0 +1,296 @@
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
+
+export default function Home() {
+
+  const notifyUser = () => {
+    if()
+    alert('This has been done')
+  }
+  return (
+    <div className="container">
+      <Head>
+        <title>Create Next App</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+     
+      <main>
+     <div className='mwlogo'>
+      <Image 
+          src="/images/mwlogo.png" 
+          height={74}
+          width={344} 
+          alt="Your Name"
+       />
+    </div>
+
+      <h1 className="title">
+
+  <Link href="/posts/first-post">
+    <a>contact</a>
+  </Link>
+</h1>
+
+        <div className="grid">
+          <a href="https://nextjs.org/docs" className="card">
+          <div className='containerlogos'>
+          <Image 
+          src="/images/talkie.png" 
+          height={100}
+          width={70} 
+          alt="Your Name"
+       />
+       </div>
+            <h3>Heading Two</h3>
+            <p>Integer accumsan molestie nisl, id <br></br>faucibus urna accumsan quis. Proin <br></br>vulputate, mauris semper maximus.</p>
+          <div className='learnButton'>
+            Learn More
+          </div>
+          
+          </a>
+
+          <a href="https://nextjs.org/learn" className="card">
+          <div className='containerlogos'>
+          <Image 
+          src="/images/rabbit.png" 
+          height={70}
+          width={100} 
+          alt="Your Name"
+       />
+       </div>
+            <h3>Heading Two</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur<br></br> adipiscing elit, sed do eiusmod tempor <br></br> incididunt ut labore et dolore</p>
+            <div className='learnButton'>
+            Learn More
+          </div>
+         
+          </a>
+
+          <a
+            href="https://github.com/vercel/next.js/tree/master/examples"
+            className="card"
+          >
+            <div className='containerlogos'>
+             <Image 
+          src="/images/shield.png" 
+          height={70}
+          width={70} 
+          alt="Your Name"
+       />
+       </div>
+            <h3>Heading Two</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur <br></br>adipiscing elit, sed do eiusmod tempor <br></br>incididunt ut labore et dolore</p>
+            <div className='learnButton'>
+            Learn More
+          </div>
+         
+          </a>
+
+
+        </div>
+      </main>
+      <h1>Heading One</h1>
+            <p>Remove the duplicates in 2 Javascript objects (found in readme), add the results to an array and output the list of distinct names in an unordered list below this paragraph when 
+              <button onclick={notifyUser}>this link</button>
+              is clicked. If the operation has been completed already, notify the user that this has already been done.</p>
+      <footer>
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by{' '}
+          <img src="/vercel.svg" alt="Vercel" className="logo" />
+        </a>
+      </footer>
+
+      <style jsx>{`
+        .container {
+          min-height: 100vh;
+          padding: 0 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          background-color: #222222
+        }
+        
+        .mwlogo{
+          width: 100%;
+          object-fit: cover;
+          object-position: bottom;
+          position:relative;
+          bottom:3rem;
+          right:1rem
+       }
+
+       .containerlogos{
+         
+       }
+
+       .learnButton{
+         background-color:#DEBF79;
+         color:white;
+         padding:0.5rem;
+         width:45%;
+         position:relative;
+         left:4.4rem;
+         top:3rem
+       }
+
+        main {
+          padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        footer {
+          width: 100%;
+          height: 100px;
+          border-top: 1px solid #eaeaea;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        footer img {
+          margin-left: 0.5rem;
+        }
+
+        footer a {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        .title a {
+          color: #DEBF79;
+          text-decoration: none;
+         font-size:20px
+          
+        }
+
+        .title a:hover,
+        .title a:focus,
+        .title a:active {
+          text-decoration: underline;
+        }
+
+        .title {
+          margin: 0;
+          line-height: 1.15;
+          font-size: 2rem;
+          position: relative;
+          left:30rem;
+          bottom:7.5rem;
+          
+        }
+
+        .title,
+        .description {
+          text-align: center;
+        }
+
+        .description {
+          line-height: 1.5;
+          font-size: 1.5rem;
+        }
+
+        code {
+          background: #fafafa;
+          border-radius: 5px;
+          padding: 0.75rem;
+          font-size: 1.1rem;
+          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
+            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
+        }
+
+        .grid {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          // flex-wrap: wrap;
+          position:relative;
+          bottom:3rem
+        }
+
+        h1 {
+          color:white;
+          margin-right:auto;
+          position:relative;
+          left: 10rem;
+          bottom:10rem;
+          font-size:50px
+        }
+        .card {
+          margin: 1rem;
+          padding: 1.5rem;
+          height:22rem;
+          width:22rem;
+          color: inherit;
+          text-decoration: none;
+          border: 1px solid #eaeaea;
+          transition: color 0.15s ease, border-color 0.15s ease;
+          background-color:white;
+          text-align:center
+        }
+
+        .card:hover,
+        .card:focus,
+        .card:active {
+          color: #0070f3;
+          border-color: #0070f3;
+        }
+
+        .card h3 {
+          margin: 0 0 1rem 0;
+          font-size: 1.9rem;
+        }
+
+        .card p {
+          margin: 0;
+          font-size: .80rem;
+          line-height: 1.9;
+          color: #858585;
+          font-weight:medium
+        }
+
+        .logo {
+          height: 1em;
+          
+        }
+
+        @media (max-width: 600px) {
+          .grid {
+            width: 100%;
+            flex-direction: column;
+          }
+        }
+      `}</style>
+
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
+        }
+      `}</style>
+    </div>
+  )
+}
