@@ -1,13 +1,42 @@
 import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
+import React, {useState} from 'react'
 
 export default function Home() {
+const [showList, setShowList] = useState(false) //this means we wont see the list upon refresh.
 
-  const notifyUser = () => {
-    if()
-    alert('This has been done')
+const clickHandler = () => {
+  if(showList === false) {
+    setShowList(true)
+  } else if(showList === true){
+    setShowList(false)
+    alert('This operation has been completed already')
   }
+  // console.log('clicked')
+  // setShowList(true)
+}
+const uniqueChars = new Set()   //Set holds unique values
+const arr = [
+  {name:'Matt Johnson'},
+  {name:'Matt Johnson'},
+  {name:'Bart Paden'},
+  {name:'Ryan Doss'},
+  {name:'Jared Malcolm'},
+];
+
+
+
+const filteredArr = arr.filter((obj) => {    //filter() to loop over each element in the array (name)
+  const presentChars = uniqueChars.has(obj.name);  //has() checks if the current object's name is already in the array
+  uniqueChars.add(obj.name); //elements will only be added if they are not already present
+  return !presentChars
+});
+
+console.log(filteredArr);
+
+
+ 
   return (
     <div className="container">
       <Head>
@@ -91,9 +120,20 @@ export default function Home() {
         </div>
       </main>
       <h1>Heading One</h1>
+      <div id='goldLine'></div>
             <p>Remove the duplicates in 2 Javascript objects (found in readme), add the results to an array and output the list of distinct names in an unordered list below this paragraph when 
-              <button onclick={notifyUser}>this link</button>
+              <button onClick={clickHandler}>This Link</button>
               is clicked. If the operation has been completed already, notify the user that this has already been done.</p>
+
+             {showList && <ul> 
+                {filteredArr.map((item, index) => {
+                  return <li key={index}>
+                    {item.name}
+                  </li>
+                }) 
+                }
+              </ul>
+        }
       <footer>
         <a
           href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -139,6 +179,13 @@ export default function Home() {
          top:3rem
        }
 
+       #goldLine{
+         height: .2rem;
+         width: 30rem;
+         background-color: #DEBF79;
+         position: relative;
+         right: 19rem;
+       }
         main {
           padding: 5rem 0;
           flex: 1;
@@ -227,10 +274,20 @@ export default function Home() {
           color:white;
           margin-right:auto;
           position:relative;
-          left: 10rem;
-          bottom:10rem;
+          left: 4.3rem;
+          bottom:8rem;
           font-size:50px
         }
+
+        #goldLine{
+          height: .2rem;
+          width: 11.3rem;
+          background-color: #DEBF79;
+          position: relative;
+          right: 29.1rem;
+          bottom:10rem
+        }
+
         .card {
           margin: 1rem;
           padding: 1.5rem;
@@ -294,3 +351,21 @@ export default function Home() {
     </div>
   )
 }
+
+
+
+// {filteredArr.map(({name})=>{
+//   <p key={name}>{name}</p>
+// })}
+
+
+//ternary
+// {showList ? <ul> //showList is false until we click the button to make it true. 
+// {filteredArr.map((item, index) => {
+//   return <li key={index}>
+//     {item.name}
+//   </li>
+// }) 
+// }
+// </ul> : <h1>hidden</h1>
+// }
