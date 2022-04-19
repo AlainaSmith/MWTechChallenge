@@ -2,11 +2,11 @@ import Link from 'next/link'
 import Head from 'next/head'
 import Layout from '../../components/layout'
 
-export default function FirstPost() {
+const FirstPost = () => {
   return (
     <Layout>
       <Head>
-        <title>First Post</title>
+        <title>Contact</title>
       </Head>
       <h1>First Post</h1>
 
@@ -18,3 +18,5 @@ export default function FirstPost() {
     </Layout>
   )
 }
+
+export default FirstPost
